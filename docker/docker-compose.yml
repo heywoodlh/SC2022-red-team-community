@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  vulnerable:
+    container_name: vulnerable
+    image: heywoodlh/sc-vulnerable
+    networks:
+      vulnerable_net:
+        ipv4_address: 172.30.30.10
+    platform: "linux/amd64"
+
+  attacker:
+    container_name: attacker
+    image: heywoodlh/sc-attacker 
+    #build: ./attacker 
+    ports:
+      - 127.0.0.1:3389:3389
+    networks:
+      vulnerable_net:
+        ipv4_address: 172.30.30.50
+    volumes:
+    - ./net-info.txt:/tmp/net-info.txt 
+
+networks:
+  vulnerable_net:
+    ipam:
+      config:
+        - 
+          subnet: 172.30.30.0/24
+          gateway: 172.30.30.1
