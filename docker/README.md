@@ -38,3 +38,9 @@ IP Address: 127.0.0.1:3389
 Username: attacker
 Password: attacker
 ```
+
+Alternatively, access the attacker container using the `ssh` command:
+
+```
+ssh -p 2222 attacker@localhost
+```

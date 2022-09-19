@@ -15,6 +15,7 @@ services:
     #build: ./attacker 
     ports:
       - 127.0.0.1:3389:3389
+      - 127.0.0.1:2222:22
     networks:
       vulnerable_net:
         ipv4_address: 172.30.30.50
