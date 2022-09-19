@@ -15,8 +15,8 @@ services:
     image: heywoodlh/sc-attacker 
     restart: unless-stopped
     ports:
-      - 3389:3389
-      - 2222:22
+      - "3389:3389"
+      - "22:22"
     networks:
       vulnerable_net:
         ipv4_address: 172.30.30.50
