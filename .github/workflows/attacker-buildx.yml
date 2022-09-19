@@ -34,4 +34,4 @@ jobs:
           file: ./SC2022-red-team-community/docker/attacker/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/armhf
           push: true
-          tags: heywoodlh/sc-attacker:latest
+          tags: heywoodlh/sc-attacker:supervisord
