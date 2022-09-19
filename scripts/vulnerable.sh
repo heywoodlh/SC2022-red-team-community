@@ -20,4 +20,5 @@ systemctl start docker.service
 # Clone the repository and bring up the containers
 rm -rf /opt/SC2022-red-team-community
 git clone https://github.com/heywoodlh/SC2022-red-team-community /opt/SC2022-red-team-community
+cp -f /opt/SC2022-red-team-community/docker/docker-compose.yml-system /opt/SC2022-red-team-community/docker/docker-compose.yml
 cd /opt/SC2022-red-team-community/docker && docker-compose up -d 
