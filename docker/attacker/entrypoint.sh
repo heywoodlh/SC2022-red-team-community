@@ -14,6 +14,11 @@ cp /etc/bashrc /root/.bashrc
 touch /home/${USER}/.hushlogin
 touch /root/.hushlogin
 
+## Desktop settings
+mkdir -p /home/${USER}/.config
+tar -C /home/${USER}/.config -xf /opt/xfce4.tar.gz
+chown -R ${USER} /home/${USER}/.config
+
 ## If /tmp/net-info.txt exists, copy it to the Desktop 
 mkdir -p /home/${USER}/Desktop
 [[ -e /tmp/net-info.txt ]] && cp /tmp/net-info.txt /home/${USER}/Desktop/net-info.txt && chown ${USER} /home/${USER}/Desktop/net-info.txt

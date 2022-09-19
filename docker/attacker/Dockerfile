@@ -30,7 +30,8 @@ RUN apt-get update \
         webscarab \
         yersinia \
         bash-completion \
-        neofetch 
+        neofetch \
+	kali-community-wallpapers
 
 ## Cleanup
 RUN apt-get autoremove -y &&\
@@ -41,5 +42,6 @@ ENV LANG en_US.UTF-8
 
 COPY entrypoint.sh /usr/bin/entrypoint
 COPY bashrc /etc/bashrc
+COPY xfce4.tar.gz /opt/xfce4.tar.gz
 EXPOSE 3389/tcp
 ENTRYPOINT ["/usr/bin/entrypoint"]
