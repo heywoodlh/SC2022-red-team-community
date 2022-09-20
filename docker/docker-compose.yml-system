@@ -12,7 +12,7 @@ services:
 
   attacker:
     container_name: attacker
-    image: heywoodlh/sc-attacker 
+    image: heywoodlh/sc-attacker:supervisord 
     restart: unless-stopped
     ports:
       - "3389:3389"
