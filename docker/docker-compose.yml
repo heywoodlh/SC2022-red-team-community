@@ -7,6 +7,9 @@ services:
     networks:
       vulnerable_net:
         ipv4_address: 172.30.30.10
+    volumes:
+      - ./sudoers/sudoers:/etc/sudoers 
+      - ./sudoers/security:/etc/sudoers.d/security
     platform: "linux/amd64"
 
   attacker:
@@ -20,8 +23,8 @@ services:
       vulnerable_net:
         ipv4_address: 172.30.30.50
     volumes:
-    - ./net-info.txt:/tmp/net-info.txt 
-    - ./staff-passwords.txt:/tmp/staff-passwords.txt
+      - ./net-info.txt:/tmp/net-info.txt 
+      - ./staff-passwords.txt:/tmp/staff-passwords.txt
     environment:
       USER: attacker
       PASSWORD: attacker
