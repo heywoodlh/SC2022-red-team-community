@@ -11,7 +11,7 @@ services:
 
   attacker:
     container_name: attacker
-    image: heywoodlh/sc-attacker:supervisord
+    image: heywoodlh/sc-attacker
     #build: ./attacker 
     ports:
       - 127.0.0.1:3389:3389
