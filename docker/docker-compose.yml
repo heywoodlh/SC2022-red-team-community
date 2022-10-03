@@ -21,7 +21,7 @@ services:
         ipv4_address: 172.30.30.50
     volumes:
     - ./net-info.txt:/tmp/net-info.txt 
-    - ./staff-passwords.txt:/opt/staff-passwords.txt
+    - ./staff-passwords.txt:/tmp/staff-passwords.txt
     environment:
       USER: attacker
       PASSWORD: attacker
