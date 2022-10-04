@@ -1,0 +1,1 @@
+security ALL=NOPASSWD:/usr/bin/vim
