@@ -12,6 +12,13 @@ services:
       - ./sudoers/security:/etc/sudoers.d/security
     platform: "linux/amd64"
 
+  juiceshop:
+    container_name: juiceshop
+    image: bkimminich/juice-shop:v14.3.0
+    networks:
+      vulnerable_net:
+        ipv4_address: 172.30.30.20
+
   attacker:
     container_name: attacker
     image: heywoodlh/sc-attacker

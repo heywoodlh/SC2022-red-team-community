@@ -36,6 +36,11 @@ RUN apt-get update \
 	iputils-ping \
 	kali-community-wallpapers
 
+## Juiceshop dependencies
+RUN apt-get update \
+    && DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
+	burpsuite
+
 ## SSH setup
 RUN sed -i 's/#ListenAddress 0.0.0.0/ListenAddress 0.0.0.0/g' /etc/ssh/sshd_config
 RUN echo 'AuthorizedKeysFile ~/.ssh/authorized_keys' >> /etc/ssh/sshd_config

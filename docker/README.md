@@ -28,6 +28,8 @@ When the containers are up there should be the following resources available:
 
 3. A `vulnerable` Docker container with an IP of 172.30.30.10 for you to exploit.
 
+4. A `juiceshop` Docker container with an IP of 172.30.30.20 for you to exploit.
+
 ### Accessing the environment:
 
 Access the `attacker` Docker container with a remote desktop client using the following information:

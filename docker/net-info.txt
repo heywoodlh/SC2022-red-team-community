@@ -1,3 +1,5 @@
 vulnerable target IP: 172.30.30.10
 
+juiceshop target IP: 172.30.30.20
+
 my (attacker) IP: 172.30.30.50
