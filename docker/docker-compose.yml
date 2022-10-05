@@ -3,7 +3,7 @@ version: "3.8"
 services:
   vulnerable:
     container_name: vulnerable
-    image: heywoodlh/sc-vulnerable
+    image: heywoodlh/sc-vulnerable:2021_10_snapshot
     networks:
       vulnerable_net:
         ipv4_address: 172.30.30.10
@@ -23,7 +23,7 @@ services:
 
   attacker:
     container_name: attacker
-    image: heywoodlh/sc-attacker
+    image: heywoodlh/sc-attacker:726d64811fe551ae2fa0ceda9914fe2c6ec13704
     #build: ./attacker 
     ports:
       - 127.0.0.1:3389:3389
