@@ -3,14 +3,20 @@
 # If Arch Linux, install docker
 if grep -q 'Arch Linux' /etc/os-release
 then
-        pacman -Syu --noconfirm docker docker-compose git
+	if ! pacman -Q | grep -iq docker-compose
+	then
+		pacman -Syu --noconfirm docker docker-compose git
+	fi
 fi
 
 # If Debian-based, install docker
 if [[ -e /etc/debian_version ]]
 then
-        apt-get update 
-        apt-get install -y docker.io docker-compose git
+	if ! dpkg -l | grep -iq docker-compose
+	then
+		apt-get update 
+		apt-get install -y docker.io docker-compose git
+	fi
 fi
 
 # Start docker service
