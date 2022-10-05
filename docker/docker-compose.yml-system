@@ -29,8 +29,8 @@ services:
     image: heywoodlh/sc-attacker:726d64811fe551ae2fa0ceda9914fe2c6ec13704
     #build: ./attacker 
     ports:
-      - 3389:3389
-      - 22:22
+      - "3389:3389"
+      - "22:22"
     networks:
       vulnerable_net:
         ipv4_address: 172.30.30.50
