@@ -3,13 +3,10 @@ version: "3.8"
 services:
   vulnerable:
     container_name: vulnerable
-    image: heywoodlh/sc-vulnerable:2021_10_snapshot
+    image: heywoodlh/sc-vulnerable:2022_10_snapshot
     networks:
       vulnerable_net:
         ipv4_address: 172.30.30.10
-    volumes:
-      - ./sudoers/sudoers:/etc/sudoers 
-      - ./sudoers/security:/etc/sudoers.d/security
     platform: "linux/amd64"
 
   juiceshop:
