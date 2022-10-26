@@ -1,0 +1,41 @@
+name: sc-domain-controller-buildx
+
+on:
+  workflow_dispatch:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: clone https://github.com/heywoodlh/SC2022-red-team-community
+        uses: actions/checkout@master
+        with:
+          name: heywoodlh/SC2022-red-team-community 
+          repository: heywoodlh/SC2022-red-team-community 
+          path: ./SC2022-red-team-community
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: get current sha for image tag
+        id: version
+        run: echo "::set-output name=version::$(git -C ./SC2022-red-team-community rev-parse HEAD)"
+      -
+        name: Build and push heywoodlh/domain-controller
+        uses: docker/build-push-action@v2
+        with:
+          context: ./SC2022-red-team-community/docker/domain-controller
+          file: ./SC2022-red-team-community/docker/domain-controller/Dockerfile
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          push: true
+          tags: heywoodlh/domain-controller:latest,heywoodlh/domain-controller:${{ steps.version.outputs.version }}
