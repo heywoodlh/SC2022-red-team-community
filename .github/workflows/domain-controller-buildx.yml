@@ -38,4 +38,4 @@ jobs:
           file: ./SC2022-red-team-community/docker/domain-controller/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: heywoodlh/domain-controller:latest,heywoodlh/domain-controller:${{ steps.version.outputs.version }}
+          tags: heywoodlh/sc-domain-controller:latest,heywoodlh/sc-domain-controller:${{ steps.version.outputs.version }}
